@@ -144,3 +144,10 @@ document.querySelector("#tweenBox").addEventListener("click", function() {
 
 
 ## VARIABLES
+
+
+## Easing
+
+[link] https://greensock.com/docs/v2/Easing
+
+
