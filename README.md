@@ -12,9 +12,9 @@
 TweenMax.to(target, duration, {vars});
 ```
 1. **to** : target에 적용된 값으로 모션 이동,  max의 최종 지점
-2. **target** : 대상(인자)
-3. **duration** : 지속시간 (몇초동안 진행되는 시간)
-4. **vars** : 대상에 부여할 키값
+2. **target** : Object - 대상
+3. **duration** : Number - 지속시간 (몇초동안 진행되는 시간)
+4. **vars(variables)** : Object - 객체의 모든 속성
 
 
 ### .from()
@@ -79,9 +79,6 @@ timeLine.to($('.box'), 1, {backgroundColor: '#ccc'})
 - 하나의 애니메이션이 아닌, 타임라인식으로 애니메이션 모션 
 
 
-## 기타 속성
-
-1. **yoyo** : 
 
 
 
@@ -102,5 +99,48 @@ tween.repeat(1);
 ```
 
 
+### 기타
+
+**1. yoyo**
+- Boolean, 애니메이션을 앞뒤로 반복하여 실행시킨다.
+- yoyo 를 사용하기 위해서는 반드시 repeat 필요
+
+```
+TweenMax.to(".box", 1, {padding: 20, repeat: 1, yoyo: true});
+```
+
+**2. reverse / .reversed**
+- 애니메이션 재생, 역재생에 대한 여부 및 설정
+
+**3. isActive**
+- 애니메이션 활성화 여부
+
+```
+document.querySelector("#tweenBox").addEventListener("click", function() {
+  if(!tween.isActive()) {
+    // Only reverse the direction if the tween is not active
+    tween.reversed() ? tween.play() : tween.reverse();
+  }
+});
+```
 
 
+###  kill 관련
+
+1. **TweenMax.killAll()** : 전체 트윈 기능 없앰
+
+2. **TweenMax.killDelayedCallsTo(function:Function)** : 해당 delayedCall함수를 kill 함
+ 
+3. **TweenMax.killAllTweens(complete:Boolean):void **
+ -false(default) : pause() 처럼 보이면서 tween kill
+ -true : complete 화면을 보여주고 tween kill
+ -delayedCall은 kill안됨
+ 
+4. **pause()** : void, 현재 위치에서 일시 중지 
+
+5. **paused()** : void, 애니메이션이 현재 일시 중지 되었는지에 대한 여부 및 설정
+
+6. **resume()** : (suppressEvents : Boolean) 방향을 바꾸지 않고 재생을 계속한다.
+
+
+## VARIABLES
