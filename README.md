@@ -1,6 +1,6 @@
 # tweenMax
 
-link : [tweenMax link](https://greensock.com/docs/v2/TweenMax)
+link : [tweenMax](https://greensock.com/docs/v2/TweenMax)
 
 
 
@@ -148,6 +148,7 @@ document.querySelector("#tweenBox").addEventListener("click", function() {
 
 ## Easing
 
-[link] https://greensock.com/docs/v2/Easing
+link : [link](https://greensock.com/docs/v2/Easing)
+
 
 
