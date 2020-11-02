@@ -1,6 +1,6 @@
 # tweenMax
 
-[tweenMax link]: https://greensock.com/docs/v2/TweenMax
+[tweenMax link]: (https://greensock.com/docs/v2/TweenMax)
 
 
 
