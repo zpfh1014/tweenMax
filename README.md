@@ -1,6 +1,6 @@
 # tweenMax
 
-[tweenMax]<https://greensock.com/docs/v2/TweenMax>
+link : [tweenMax](https://greensock.com/docs/v2/TweenMax)
 
 
 
@@ -131,10 +131,10 @@ document.querySelector("#tweenBox").addEventListener("click", function() {
 
 2. **TweenMax.killDelayedCallsTo(function:Function)** : 해당 delayedCall함수를 kill 함
  
-3. **TweenMax.killAllTweens(complete:Boolean):void **
- -false(default) : pause() 처럼 보이면서 tween kill
- -true : complete 화면을 보여주고 tween kill
- -delayedCall은 kill안됨
+3. **TweenMax.killAllTweens(complete:Boolean):void** :
+ - false(default) : pause() 처럼 보이면서 tween kill
+ - true : complete 화면을 보여주고 tween kill
+ - delayedCall은 kill안됨
  
 4. **pause()** : void, 현재 위치에서 일시 중지 
 
@@ -145,10 +145,17 @@ document.querySelector("#tweenBox").addEventListener("click", function() {
 
 ## VARIABLES
 
+link : [link](https://greensock.com/docs/v2/TweenMax/vars)
+
+
 
 ## Easing
 
-[link] <https://greensock.com/docs/v2/Easing>
+link : [link](https://greensock.com/docs/v2/Easing)
 
+
+## gsap plugin
+
+https://greensock.com/docs/v3/Plugins/ScrollTrigger
 
 
