@@ -148,7 +148,7 @@ document.querySelector("#tweenBox").addEventListener("click", function() {
 
 ## Easing
 
-link : [link](https://greensock.com/docs/v2/Easing)
+link : [link]<https://greensock.com/docs/v2/Easing>
 
 
 
