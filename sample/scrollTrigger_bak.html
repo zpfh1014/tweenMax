@@ -44,7 +44,7 @@ section{
 </head>
 <body>
 <progress max="100" value="0"></progress>
-<main>
+<div class="wrap">
     <section class="spacer">Spacer</section>
     <section class="color" data-color="red">
         <p>Scroll to add some color to your life!🎨</p>
@@ -58,14 +58,15 @@ section{
     <section class="color" data-color="yellow">
         <p>Here you go!<br>Did you like it?🌈</p>
     </section>
-</main>
 </div>
 <!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js"></script>
 
 <script>
-gsap.registerPlugin(ScrollTrigger);
+gsap.core.globals("ScrollTrigger", ScrollTrigger);
+//gsap.registerPlugin(ScrollTrigger);
+//gsap.registerPlugin(ScrollToPlugin, ScrollTrigger);
 gsap.to('progress', {
   value: 100,
   ease: 'none',
@@ -74,16 +75,26 @@ gsap.to('progress', {
 
 gsap.utils.toArray(".color").forEach(function(elem) {
 var color = elem.getAttribute('data-color');
+var main = document.querySelector('wrap');
 ScrollTrigger.create({
   trigger: elem,
   start:'top 50%',
   end:'bottom 50%',
-  onEnter: () => gsap.to('main', {backgroundColor:color}), 
-  onLeave: () => gsap.to('main', {backgroundColor:'white'}), 
-  onLeaveBack: () => gsap.to('main', {backgroundColor:'white'}), 
-  onEnterBack: () => gsap.to('main', {backgroundColor:color}), 
+  onEnter: function (){
+    gsap.to(main, {backgroundColor:color})
+  }, 
+  onLeave: function (){
+    gsap.to(main, {backgroundColor:'white'})
+  }, 
+  onLeaveBack: function (){
+    gsap.to(main, {backgroundColor:'white'})
+  }, 
+  onEnterBack: function (){
+    gsap.to(main, {backgroundColor:color})
+  }, 
   markers:true
 });
+
 
 });
 
